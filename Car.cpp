@@ -42,7 +42,7 @@ void Car::changeExhaust(std::string mode) {
 }
 
 void Car::drive() {
-    this->horsePower++;
+    this->odometer++;
 }
 
 int Car::getHorsePower() const {
