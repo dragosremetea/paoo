@@ -1,3 +1,0 @@
-D:/2_paoo/paoo/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/2_paoo/paoo/cmake-build-debug/CMakeFiles/paoo.dir
-D:/2_paoo/paoo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
