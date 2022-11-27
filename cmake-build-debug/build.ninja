@@ -72,6 +72,12 @@ build CMakeFiles/paoo.dir/Car.cpp.obj: CXX_COMPILER__paoo_Debug D$:/2_paoo/paoo/
   OBJECT_DIR = CMakeFiles\paoo.dir
   OBJECT_FILE_DIR = CMakeFiles\paoo.dir
 
+build CMakeFiles/paoo.dir/Mercedes.cpp.obj: CXX_COMPILER__paoo_Debug D$:/2_paoo/paoo/Mercedes.cpp || cmake_object_order_depends_target_paoo
+  DEP_FILE = CMakeFiles\paoo.dir\Mercedes.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\paoo.dir
+  OBJECT_FILE_DIR = CMakeFiles\paoo.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target paoo
@@ -80,7 +86,7 @@ build CMakeFiles/paoo.dir/Car.cpp.obj: CXX_COMPILER__paoo_Debug D$:/2_paoo/paoo/
 #############################################
 # Link the executable paoo.exe
 
-build paoo.exe: CXX_EXECUTABLE_LINKER__paoo_Debug CMakeFiles/paoo.dir/main.cpp.obj CMakeFiles/paoo.dir/Car.cpp.obj
+build paoo.exe: CXX_EXECUTABLE_LINKER__paoo_Debug CMakeFiles/paoo.dir/main.cpp.obj CMakeFiles/paoo.dir/Car.cpp.obj CMakeFiles/paoo.dir/Mercedes.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\paoo.dir

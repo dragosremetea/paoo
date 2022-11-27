@@ -1,5 +1,6 @@
 #include <iostream>
-#include "Car.h"
+#include "Car.hpp"
+#include "Mercedes.h"
 
 int main() {
 
@@ -28,5 +29,18 @@ int main() {
 
 
     std::cout<<std::endl;
+
+    Mercedes merc(800, "br br br br", true);
+
+    std::cout<<"Brabus? :"<< merc.getBrabus() <<" and horsepower: "<<merc.getHorsePower()<<std::endl;
+
+
+    Car car1, car2, car3;
+
+    car3=car2=car1=bmw=bmw; //de la dreapta la stanga
+
+    Mercedes merc2(merc);
+    std::cout<<"Brabus? :"<< merc2.getBrabus() <<" and horsepower: "<<merc2.getHorsePower()<<std::endl;
+
     return 0;
 }

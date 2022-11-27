@@ -1,10 +1,13 @@
-#include "Car.h"
+#include "Car.hpp"
 #include <iostream>
 
 Car::Car(int horsePower, std::string exhaust) {
     this->horsePower = horsePower;
     this->exhaust = exhaust;
+    std::cout<<"A fost apelat constructor de car" <<std::endl;
 }
+
+Car::Car()= default;
 
 Car::~Car() {
     std::cout<<"Am dus gunoiul"<<std::endl;
@@ -67,6 +70,18 @@ double Car::getOdometer() const {
 
 void Car::setOdometer(double odometer) {
     Car::odometer = odometer;
+}
+
+Car &Car::operator=(const Car &rhs) {
+    if (this != &rhs) {
+        this->horsePower = rhs.horsePower;
+        this->odometer = rhs.odometer;
+        this->exhaust = rhs.exhaust;
+        std::cout << "A!=A => copy assigment"<<std::endl;
+    } else {
+        std::cout << "A=A => return A"<<std::endl;
+    }
+    return *this;
 }
 
 

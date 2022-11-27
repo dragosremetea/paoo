@@ -1,7 +1,3 @@
-//
-// Created by drago on 17.11.2022.
-//
-
 #ifndef PAOO_CAR_H
 #define PAOO_CAR_H
 
@@ -16,18 +12,18 @@ private:
     double odometer = 0.0;
 
 public:
+    Car ();
+
     Car(int horsePower,
-        std::string exhaust); //string este o adresa, sa nu facem transmitere prin valoare, deci nu cream alt string
+        std::string exhaust);
 
     ~Car();
 
     Car(Car &o) = default;
 
-    Car &operator=(Car const&) = default; // "=" este default
+//    Car &operator=(Car const&) = default; // "=" este default
 
-    Car &operator=(Car &&) = delete; // "=" pentru std::move(car2)
-
-    Car(Car &&o) = delete;
+    Car &operator=(const Car& rhs);
 
     void tuneEngine(int horsePower);
 
@@ -58,3 +54,5 @@ public:
 
 
 #endif //PAOO_CAR_H
+// inheritance !!!!!!!!!!!!!!
+// da si tu cu cmake lasa ide ul :D
