@@ -1,4 +1,4 @@
-#include "Car.hpp"
+#include "Car.h"
 #include <iostream>
 
 Car::Car(int horsePower, std::string exhaust) {
@@ -7,10 +7,12 @@ Car::Car(int horsePower, std::string exhaust) {
     std::cout<<"A fost apelat constructor de car" <<std::endl;
 }
 
-Car::Car()= default;
+Car::Car() {
+    this->exhaust = "normal car exhaust";
+};
 
 Car::~Car() {
-    std::cout<<"Am dus gunoiul"<<std::endl;
+    std::cout<<"Am sters masina cu "<<this->horsePower<<" cp"<<std::endl;
 }
 
 void Car::tuneEngine(int stage) {
@@ -82,6 +84,10 @@ Car &Car::operator=(const Car &rhs) {
         std::cout << "A=A => return A"<<std::endl;
     }
     return *this;
+}
+
+Car *Car::createCar() {
+    return new Car();
 }
 
 

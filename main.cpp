@@ -1,6 +1,30 @@
 #include <iostream>
-#include "Car.hpp"
+#include <memory>
+#include "Car.h"
 #include "Mercedes.h"
+
+void f_auto() {
+    std::auto_ptr<Car> plnv(Car::createCar());
+    std::cout<<plnv->getExhaust()<<std::endl;
+    plnv->changeExhaust("sport");
+    std::cout<<plnv->getExhaust()<<std::endl;
+    plnv->setHorsePower(4);
+
+    std::auto_ptr<Car> plnv2(plnv);
+//    std::cout<<plnv->getHorsePower()<<std::endl; //nu functioneaza pentru ca plnv = null
+    std::cout<<plnv2->getHorsePower()<<std::endl;
+}
+
+void f_shared() {
+    std::shared_ptr<Car> plnv(Car::createCar());
+    plnv->setHorsePower(5);
+
+    std::shared_ptr<Car> plnv2(plnv);
+    plnv2->setHorsePower(6);
+
+    std::cout<<plnv->getHorsePower()<<std::endl;
+    std::cout<<plnv2->getHorsePower()<<std::endl;
+}
 
 int main() {
 
@@ -41,6 +65,12 @@ int main() {
 
     Mercedes merc2(merc);
     std::cout<<"Brabus? :"<< merc2.getBrabus() <<" and horsepower: "<<merc2.getHorsePower()<<std::endl;
+
+    f_auto();
+
+    f_shared();
+
+    //obesrvam ca prima data se sterg masinile create prin factory (individual, imediat dupa apelarea fiecarei functii), iar apoi destructorul sterge restul
 
     return 0;
 }

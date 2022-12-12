@@ -21,9 +21,9 @@ public:
 
     Car(Car &o) = default;
 
-//    Car &operator=(Car const&) = default; // "=" este default
-
     Car &operator=(const Car& rhs);
+
+    static Car* createCar();
 
     void tuneEngine(int horsePower);
 
@@ -53,6 +53,4 @@ public:
 };
 
 
-#endif //PAOO_CAR_H
-// inheritance !!!!!!!!!!!!!!
-// da si tu cu cmake lasa ide ul :D
+#endif

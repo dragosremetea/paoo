@@ -6,7 +6,7 @@
 #define PAOO_MERCEDES_H
 
 
-#include "Car.hpp"
+#include "Car.h"
 
 class Mercedes: public Car{
 private:
