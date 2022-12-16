@@ -43,6 +43,8 @@ public:
 
     void setOdometer(double odometer);
 
+    void isOnSportMode();
+
     /* C++ silent functions
      * - copy constructor
      * - move destructor

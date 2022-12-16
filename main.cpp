@@ -26,6 +26,16 @@ void f_shared() {
     std::cout<<plnv2->getHorsePower()<<std::endl;
 }
 
+void lock(Car &c) {
+    std::cout<<"Car with "<< c.getHorsePower() << " hp is SET on SPORT mode"<<std::endl;
+    c.changeExhaust("sport");
+}
+
+void unlock(Car &c) {
+    std::cout<<"Car with "<< c.getHorsePower() << " hp is SET on non-SPORT mode"<<std::endl;
+    c.changeExhaust("electric");
+}
+
 int main() {
 
     Car tesla(400,  "initial_sound_tesla");
@@ -71,6 +81,16 @@ int main() {
     f_shared();
 
     //obesrvam ca prima data se sterg masinile create prin factory (individual, imediat dupa apelarea fiecarei functii), iar apoi destructorul sterge restul
+
+    Car car5;
+    car5.setHorsePower(555);
+    car5.setExhaust("orice dar nu ratatatata");
+
+    car5.isOnSportMode();
+    lock(car5);
+    car5.isOnSportMode();
+    unlock(car5);
+    car5.isOnSportMode();
 
     return 0;
 }

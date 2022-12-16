@@ -90,4 +90,12 @@ Car *Car::createCar() {
     return new Car();
 }
 
+void Car::isOnSportMode() {
+    if (this->getExhaust() == "ratatatata") {
+        std::cout<<"The car with " << this->getHorsePower() <<" hp is in SPORT mode"<<std::endl;
+    } else {
+        std::cout<<"The car with " << this->getHorsePower() <<" hp is NOT in SPORT mode"<<std::endl;
+    }
+}
+
 
